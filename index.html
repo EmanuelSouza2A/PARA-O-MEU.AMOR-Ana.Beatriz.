@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para o Meu Grande Amor 💖</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Corações caindo no fundo */
+        .heart-bg {
+            position: fixed;
+            top: -10vh;
+            font-size: 20px;
+            animation: fall 5s linear infinite;
+            z-index: 1;
+            opacity: 0.7;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(105vh) rotate(360deg);
+            }
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px 25px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(221, 74, 102, 0.3);
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            border: 2px solid #ffb6c1;
+        }
+
+        h1 {
+            color: #d83a56;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #ffe6e8;
+            color: #d83a56;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        /* Botão do Envelope */
+        .open-btn {
+            background: linear-gradient(45deg, #ff4b2b, #ff416c);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 65, 108, 0.4);
+            transition: all 0.3s ease;
+            margin: 20px 0;
+        }
+
+        .open-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Carta Escondida */
+        .letter-content {
+            display: none;
+            text-align: left;
+            color: #4a4a4a;
+            line-height: 1.8;
+            font-size: 16px;
+            margin-top: 20px;
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .letter-content p {
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            color: #d83a56;
+            font-weight: bold;
+        }
+
+        .signature {
+            text-align: right;
+            font-weight: bold;
+            color: #d83a56;
+            font-size: 18px;
+            margin-top: 25px;
+        }
+
+        .footer-note {
+            margin-top: 30px;
+            padding: 15px;
+            background: #fff0f3;
+            border-radius: 12px;
+            border-left: 4px solid #ff416c;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="badge">✨ 1 Ano de Amor Sem Limites e Sem Distância ✨</div>
+        <h1>💌 Para a Mulher da Minha Vida</h1>
+        
+        <button class="open-btn" onclick="openLetter()">Toque para Abrir a Sua Carta 💖</button>
+
+        <div class="letter-content" id="letter">
+            <p>Meu amor, ❤️</p>
+
+            <p>Hoje se completa <strong>1 ano inteiro</strong> desde que você entrou na minha vida e mudou o meu mundo para sempre. 🌍✨ Mesmo com a distância tentando nos separar, o meu coração nunca esteve tão colado ao seu. Distância nenhuma no mundo é capaz de diminuir o que eu sinto por você! 🥺💖</p>
+
+            <p>Essa rosa linda que está aí na caixinha não está aí por acaso. 🌹 Ela está aqui para te lembrar que, em um mundo onde tudo muda e passa tão rápido, o meu amor por você continua intacto, lindo, puro e eterno. ⏳💖 Você é a flor mais rara e preciosa da minha vida, aquela que trouxe luz, cor e paz para os meus dias.</p>
+
+            <p>Mas antes de qualquer coisa... tem um segredo lindo guardado para você! 🤫🎁</p>
+
+            <p>Se você abrir a gavetinha logo abaixo dessa rosa, vai encontrar algo muito especial... 🎁✨ É um colar lindo, feito para você carregar no pescoço, bem pertinho do seu peito. 📿💓 Eu quis te dar isso para que, cada vez que você tocar nele, lembre-se de que o seu lugar dentro de mim é único, sagrado e absoluto. 👑❤️</p>
+
+            <p>Cada segundo desses 365 dias ao seu lado me dá a certeza mais bonita da minha vida: <span class="highlight">você é a única mulher do mundo para mim.</span> 🌎👩‍❤️‍👨 Não existe outra, não existe comparação e jamais vai existir alguém capaz de ocupar o espaço que é só seu no meu coração. 🥰💖</p>
+
+            <p>É o seu abraço que me acalma quando o mundo fica pesado 🫂, é o seu sorriso que ilumina os meus dias mais difíceis ☀️, e é a sua voz que traz paz para a minha alma. 🎶❤️ Obrigado por esses 12 meses incríveis, por ser tão perfeita do seu jeitinho, por me acolher com tanto carinho e por me fazer o homem mais sortudo desse planeta. 🍀🥹</p>
+
+            <p>Eu não te amo apenas pelo que você é, mas por tudo o que eu me torno quando estou com você. ✨ Você é o meu presente mais bonito, o meu porto seguro e o meu futuro todinho. 🏡💍</p>
+
+            <p>Agora sim, meu amor... pode abrir a gavetinha, colocar o seu colar e sorrir (ou deixar essa lágrima gostosa cair 🥹❤️). E lembre-se para sempre: o meu coração bate no mesmo ritmo do seu, hoje, amanhã e por toda a minha vida. 💓♾️</p>
+
+            <p class="signature">Eu te amo além do infinito! 💖✨<br>Com todo o amor da minha alma,<br><i>[Seu Nome]</i> ✍️❤️</p>
+
+            <div class="footer-note">
+                💡 <strong>Mensagem Especial:</strong> Agora abre a gavetinha da caixinha da rosa e coloca o colar bem pertinho do seu coração! 🌹📿✨
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Função para criar corações caindo
+        function createHearts() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart-bg');
+            heart.innerHTML = ['💖', '🌸', '✨', '💕', '🌹'][Math.floor(Math.random() * 5)];
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        setInterval(createHearts, 300);
+
+        // Função para abrir a carta
+        function openLetter() {
+            document.getElementById('letter').style.display = 'block';
+            document.querySelector('.open-btn').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
