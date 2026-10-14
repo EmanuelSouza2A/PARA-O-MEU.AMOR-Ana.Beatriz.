@@ -3,192 +3,267 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para o Meu Grande Amor 💖</title>
+    <title>Uma Declaração de Amor Especial 💖</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #feada6 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
+            font-family: 'Poppins', sans-serif;
             overflow-x: hidden;
             position: relative;
         }
 
-        /* Corações caindo no fundo */
-        .heart-bg {
+        /* Efeito de Pétalas e Corações */
+        .particle {
             position: fixed;
             top: -10vh;
-            font-size: 20px;
-            animation: fall 5s linear infinite;
+            font-size: 22px;
+            user-select: none;
+            pointer-events: none;
+            animation: fall linear infinite;
             z-index: 1;
-            opacity: 0.7;
         }
 
         @keyframes fall {
             to {
-                transform: translateY(105vh) rotate(360deg);
+                transform: translateY(115vh) rotate(360deg);
             }
         }
 
         /* Container Principal */
-        .container {
-            max-width: 600px;
+        .main-container {
+            max-width: 680px;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 30px 25px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(221, 74, 102, 0.3);
-            text-align: center;
-            position: relative;
             z-index: 10;
-            border: 2px solid #ffb6c1;
         }
 
-        h1 {
+        .card {
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(12px);
+            border-radius: 28px;
+            padding: 35px 25px;
+            box-shadow: 0 25px 50px rgba(216, 58, 86, 0.28);
+            border: 2px solid rgba(255, 182, 193, 0.8);
+            text-align: center;
+            transition: all 0.5s ease;
+        }
+
+        .header-title {
+            font-family: 'Great Vibes', cursive;
             color: #d83a56;
-            font-size: 24px;
-            margin-bottom: 10px;
+            font-size: 3rem;
+            margin-bottom: 5px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.08);
         }
 
-        .badge {
+        .tag-anniversary {
+            background: linear-gradient(45deg, #ffe6e8, #ffd1d6);
+            color: #d83a56;
             display: inline-block;
-            background: #ffe6e8;
-            color: #d83a56;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 14px;
-            margin-bottom: 20px;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 10px rgba(216, 58, 86, 0.1);
         }
 
         /* Botão do Envelope */
-        .open-btn {
+        .btn-envelope {
             background: linear-gradient(45deg, #ff4b2b, #ff416c);
             color: white;
             border: none;
-            padding: 15px 30px;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 30px;
+            padding: 18px 38px;
+            font-size: 1.15rem;
+            font-weight: 600;
+            border-radius: 50px;
             cursor: pointer;
-            box-shadow: 0 5px 15px rgba(255, 65, 108, 0.4);
-            transition: all 0.3s ease;
-            margin: 20px 0;
+            box-shadow: 0 12px 28px rgba(255, 65, 108, 0.45);
+            transition: all 0.4s ease;
+            outline: none;
+            animation: pulse 2s infinite;
         }
 
-        .open-btn:hover {
-            transform: scale(1.05);
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.04); }
+            100% { transform: scale(1); }
         }
 
-        /* Carta Escondida */
-        .letter-content {
+        .btn-envelope:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 18px 35px rgba(255, 65, 108, 0.6);
+        }
+
+        /* Área da Carta */
+        .letter-paper {
             display: none;
             text-align: left;
-            color: #4a4a4a;
-            line-height: 1.8;
-            font-size: 16px;
-            margin-top: 20px;
-            animation: fadeIn 1.5s ease-in-out forwards;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .letter-content p {
-            margin-bottom: 15px;
-        }
-
-        .highlight {
-            color: #d83a56;
-            font-weight: bold;
-        }
-
-        .signature {
-            text-align: right;
-            font-weight: bold;
-            color: #d83a56;
-            font-size: 18px;
             margin-top: 25px;
+            padding: 30px 25px;
+            background: #fffdf9;
+            border-radius: 18px;
+            border-left: 6px solid #ff416c;
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.03), 0 8px 20px rgba(0,0,0,0.05);
+            animation: openLetter 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        .footer-note {
-            margin-top: 30px;
-            padding: 15px;
-            background: #fff0f3;
-            border-radius: 12px;
-            border-left: 4px solid #ff416c;
-            font-size: 14px;
-            color: #666;
+        @keyframes openLetter {
+            0% { opacity: 0; transform: translateY(30px) scale(0.95); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .letter-paper p {
+            color: #3e3e3e;
+            line-height: 1.85;
+            font-size: 1.02rem;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .letter-header {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #d83a56;
+            margin-bottom: 20px !important;
+            border-bottom: 2px stroke #ffe6e8;
+            padding-bottom: 10px;
+        }
+
+        .highlight-text {
+            color: #d83a56;
+            font-weight: 600;
+            background: #ffe6e8;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+
+        .signature-box {
+            margin-top: 35px;
+            text-align: right;
+            border-top: 1px dashed #ffb6c1;
+            padding-top: 20px;
+        }
+
+        .signature-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.2rem;
+            color: #d83a56;
+            margin-bottom: 5px;
+        }
+
+        .signature-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #222;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-gift-note {
+            margin-top: 25px;
+            background: linear-gradient(135deg, #fff0f3, #ffe6e8);
+            border-radius: 15px;
+            padding: 18px;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #d83a56;
+            font-weight: 600;
+            border: 1px dashed #ff416c;
+            line-height: 1.5;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="badge">✨ 1 Ano de Amor Sem Limites e Sem Distância ✨</div>
-        <h1>💌 Para a Mulher da Minha Vida</h1>
-        
-        <button class="open-btn" onclick="openLetter()">Toque para Abrir a Sua Carta 💖</button>
+    <div class="main-container">
+        <div class="card">
+            <h1 class="header-title">Para o Meu Grande Amor</h1>
+            <div class="tag-anniversary">✨ 1 Ano de Amor, Cumplicidade & Saudade ✨</div>
+            <br>
+            <button class="btn-envelope" id="btnOpen" onclick="abrirCarta()">
+                ✉️ Toque Aqui para Abrir Sua Carta 💖
+            </button>
 
-        <div class="letter-content" id="letter">
-            <p>Meu amor, ❤️</p>
+            <div class="letter-paper" id="letterPaper">
+                <p class="letter-header">💌 Para a Mulher da Minha Vida, o Meu Único Amor 🌹✨</p>
 
-            <p>Hoje se completa <strong>1 ano inteiro</strong> desde que você entrou na minha vida e mudou o meu mundo para sempre. 🌍✨ Mesmo com a distância tentando nos separar, o meu coração nunca esteve tão colado ao seu. Distância nenhuma no mundo é capaz de diminuir o que eu sinto por você! 🥺💖</p>
+                <p>Meu amor, ❤️</p>
 
-            <p>Essa rosa linda que está aí na caixinha não está aí por acaso. 🌹 Ela está aqui para te lembrar que, em um mundo onde tudo muda e passa tão rápido, o meu amor por você continua intacto, lindo, puro e eterno. ⏳💖 Você é a flor mais rara e preciosa da minha vida, aquela que trouxe luz, cor e paz para os meus dias.</p>
+                <p>Se você está lendo esta carta agora, é porque eu precisava que os seus olhos vissem e o seu coração sentisse tudo o que as minhas palavras às vezes não conseguem expressar por inteiro... 🥺 quentinho, sincero e cheio de amor.</p>
 
-            <p>Mas antes de qualquer coisa... tem um segredo lindo guardado para você! 🤫🎁</p>
+                <p>Essa rosa linda que você está vendo não está aí por acaso. 🌹 Ela está aqui para te lembrar que, em um mundo onde tudo muda e passa tão rápido, o meu amor por você continua intacto, lindo, puro e eterno. ⏳💖 Você é a flor mais rara e preciosa que existiu na minha vida, aquela que trouxe luz, cor, paz e um perfume suave para os meus dias. 🌸✨</p>
 
-            <p>Se você abrir a gavetinha logo abaixo dessa rosa, vai encontrar algo muito especial... 🎁✨ É um colar lindo, feito para você carregar no pescoço, bem pertinho do seu peito. 📿💓 Eu quis te dar isso para que, cada vez que você tocar nele, lembre-se de que o seu lugar dentro de mim é único, sagrado e absoluto. 👑❤️</p>
+                <p>Mas antes de qualquer coisa... tem um segredo lindo guardado para você. 🤫🎁</p>
 
-            <p>Cada segundo desses 365 dias ao seu lado me dá a certeza mais bonita da minha vida: <span class="highlight">você é a única mulher do mundo para mim.</span> 🌎👩‍❤️‍👨 Não existe outra, não existe comparação e jamais vai existir alguém capaz de ocupar o espaço que é só seu no meu coração. 🥰💖</p>
+                <p>Se você abrir a gavetinha logo abaixo dessa rosa, vai encontrar algo muito especial... 🎁✨ É um colar lindo, feito para você carregar no pescoço, bem pertinho do seu peito. 📿💓 Eu quis te dar isso para que, cada vez que você tocar nele, lembre-se de que o seu lugar dentro de mim é único, sagrado e absoluto. 👑❤️</p>
 
-            <p>É o seu abraço que me acalma quando o mundo fica pesado 🫂, é o seu sorriso que ilumina os meus dias mais difíceis ☀️, e é a sua voz que traz paz para a minha alma. 🎶❤️ Obrigado por esses 12 meses incríveis, por ser tão perfeita do seu jeitinho, por me acolher com tanto carinho e por me fazer o homem mais sortudo desse planeta. 🍀🥹</p>
+                <p>Cada segundo ao seu lado me dá a certeza mais bonita da minha vida: <span class="highlight-text">você é a única mulher do mundo para mim.</span> 🌎👩‍❤️‍👨 Não existe outra, não existe comparação e jamais vai existir alguém capaz de ocupar o espaço que é só seu no meu coração. 🥰💖</p>
 
-            <p>Eu não te amo apenas pelo que você é, mas por tudo o que eu me torno quando estou com você. ✨ Você é o meu presente mais bonito, o meu porto seguro e o meu futuro todinho. 🏡💍</p>
+                <p>É o seu abraço que me acalma quando o mundo fica pesado 🫂, é o seu sorriso que ilumina os meus dias mais difíceis ☀️, e é a sua voz que traz paz para a minha alma. 🎶❤️ Obrigado por ser tão perfeita do seu jeitinho, por me acolher com tanto carinho, por me amar e por me fazer sentir o homem mais sortudo e amado desse planeta. 🍀🥹</p>
 
-            <p>Agora sim, meu amor... pode abrir a gavetinha, colocar o seu colar e sorrir (ou deixar essa lágrima gostosa cair 🥹❤️). E lembre-se para sempre: o meu coração bate no mesmo ritmo do seu, hoje, amanhã e por toda a minha vida. 💓♾️</p>
+                <p>Eu não te amo apenas pelo que você é, mas por tudo o que eu me torno quando estou ao seu lado. ✨ Você é o meu presente mais bonito, o meu porto seguro e o meu futuro todinho. 🏡💍</p>
 
-            <p class="signature">Eu te amo além do infinito! 💖✨<br>Com todo o amor da minha alma,<br><i>[Seu Nome]</i> ✍️❤️</p>
+                <p>Agora sim, meu amor... pode abrir a gavetinha, colocar o seu colar e sorrir (ou deixar essa lágrima gostosa cair 🥹❤️). E lembre-se para sempre: meu coração bate no mesmo ritmo do seu, hoje, amanhã e por toda a minha vida. 💓♾️</p>
 
-            <div class="footer-note">
-                💡 <strong>Mensagem Especial:</strong> Agora abre a gavetinha da caixinha da rosa e coloca o colar bem pertinho do seu coração! 🌹📿✨
+                <p style="font-weight: 600; color: #d83a56;">Eu te amo além do infinito. 💖✨</p>
+
+                <div class="signature-box">
+                    <div class="signature-title">Com todo o amor da minha alma,</div>
+                    <div class="signature-name">Assinado: EMANUEL FELIPE DE SOUZA CARIS ✍️❤️</div>
+                </div>
+
+                <div class="footer-gift-note">
+                    🎁 Agora abre a gavetinha da caixinha da rosa e coloca o colar bem pertinho do seu coração! 🌹📿✨
+                </div>
             </div>
         </div>
     </div>
 
+    <!-- Áudio de Fundo Romântico -->
+    <audio id="bgMusic" loop>
+        <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=romantic-piano-112189.mp3" type="audio/mpeg">
+    </audio>
+
     <script>
-        // Função para criar corações caindo
-        function createHearts() {
-            const heart = document.createElement('div');
-            heart.classList.add('heart-bg');
-            heart.innerHTML = ['💖', '🌸', '✨', '💕', '🌹'][Math.floor(Math.random() * 5)];
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
-            document.body.appendChild(heart);
+        // Chuva de Corações e Pétalas
+        function criarParticulas() {
+            const simbolos = ['💖', '🌹', '✨', '🌸', '💕', '🥰', '❤️'];
+            const particula = document.createElement('div');
+            particula.classList.add('particle');
+            particula.innerHTML = simbolos[Math.floor(Math.random() * simbolos.length)];
+            particula.style.left = Math.random() * 100 + 'vw';
+            particula.style.animationDuration = (Math.random() * 3 + 3.5) + 's';
+            particula.style.fontSize = (Math.random() * 12 + 18) + 'px';
+            document.body.appendChild(particula);
 
             setTimeout(() => {
-                heart.remove();
-            }, 5000);
+                particula.remove();
+            }, 6500);
         }
 
-        setInterval(createHearts, 300);
+        setInterval(criarParticulas, 220);
 
-        // Função para abrir a carta
-        function openLetter() {
-            document.getElementById('letter').style.display = 'block';
-            document.querySelector('.open-btn').style.display = 'none';
+        // Ação de Abrir Carta
+        function abrirCarta() {
+            document.getElementById('letterPaper').style.display = 'block';
+            document.getElementById('btnOpen').style.display = 'none';
+            
+            // Tocar Música
+            const musica = document.getElementById('bgMusic');
+            musica.volume = 0.35;
+            musica.play().catch(err => console.log("Áudio ativo ao interagir"));
         }
     </script>
 </body>
